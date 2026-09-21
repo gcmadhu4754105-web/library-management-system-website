@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <h2>📚 Library</h2>
+
+        <ul>
+            <li class="active" onclick="showSection('dashboard')">
+                🏠 Dashboard
+            </li>
+
+            <li onclick="showSection('books')">
+                📖 Books
+            </li>
+
+            <li onclick="showSection('students')">
+                👨‍🎓 Students
+            </li>
+
+            <li onclick="showSection('issue')">
+                🔄 Issue Books
+            </li>
+
+            <li onclick="showSection('return')">
+                ↩️ Return Books
+            </li>
+        </ul>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header>
+            <h1 id="pageTitle">Dashboard</h1>
+
+            <div class="profile">
+                👤 Admin
+            </div>
+        </header>
+
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="section active-section">
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>📚 Total Books</h3>
+                    <p id="totalBooks">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>👨‍🎓 Total Students</h3>
+                    <p id="totalStudents">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>🔄 Books Issued</h3>
+                    <p id="booksIssued">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>📕 Available Books</h3>
+                    <p id="availableBooks">0</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOOKS -->
+        <section id="books" class="section">
+
+            <div class="form-box">
+
+                <h2>Add New Book</h2>
+
+                <input
+                    type="text"
+                    id="bookTitle"
+                    placeholder="Book Title"
+                >
+
+                <input
+                    type="text"
+                    id="bookAuthor"
+                    placeholder="Author Name"
+                >
+
+                <button onclick="addBookFromForm()">
+                    Add Book
+                </button>
+
+            </div>
+
+
+            <div class="recent">
+
+                <h2>All Books</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="booksTable">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- STUDENTS -->
+        <section id="students" class="section">
+
+            <div class="form-box">
+
+                <h2>Add New Student</h2>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Student Name"
+                >
+
+                <input
+                    type="text"
+                    id="studentDepartment"
+                    placeholder="Department"
+                >
+
+                <button onclick="addStudentFromForm()">
+                    Add Student
+                </button>
+
+            </div>
+
+
+            <div class="recent">
+
+                <h2>All Students</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentsTable">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ISSUE BOOK -->
+        <section id="issue" class="section">
+
+            <div class="form-box">
+
+                <h2>Issue Book</h2>
+
+                <input
+                    type="number"
+                    id="issueStudentId"
+                    placeholder="Student ID"
+                >
+
+                <input
+                    type="number"
+                    id="issueBookId"
+                    placeholder="Book ID"
+                >
+
+                <button onclick="issueBookFromForm()">
+                    Issue Book
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RETURN BOOK -->
+        <section id="return" class="section">
+
+            <div class="form-box">
+
+                <h2>Return Book</h2>
+
+                <input
+                    type="number"
+                    id="returnBookId"
+                    placeholder="Book ID"
+                >
+
+                <button onclick="returnBookFromForm()">
+                    Return Book
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
